@@ -7,9 +7,10 @@
 - Step 0.7, rules that passed, p(95), p(99), exit code after your change: all 3, p(95)=413.26ms, p(99)=418.93ms, 99
 - Step 0.8, what was wrong, and how the checks showed it: pepperoni and knife needs to be capitalize, the pizza that get picked can be one with no pepperoni and knife already, so many request show the instance when the wrong pizza show up.
 
-## Part A results | Step | Test type    | Users | Req/s | p(95) | Max | Failed | Checks |
+## Part A results
+| Step | Test type    | Users | Req/s | p(95) | Max | Failed | Checks |
 | ---- | ------------ | ----- | ----- | ----- | --- | ------ | ------ |
-| A1   | Smoke        | 1     |       |       |     |        |        |
+| A1   | Smoke        | 1     |   0.482961    |  376.66ms   |    388.3ms    |    0.00%    |    100.00%    |
 | A2   | Average load | 3     |       |       |     |        |        |
 | A3   | Stress       | 5     |       |       |     |        |        |
 | A4   | Spike        | 5     |       |       |     |        |        |
