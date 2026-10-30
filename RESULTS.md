@@ -5,7 +5,7 @@
 - Step 0.2, requests, rate and p(95), and why the rate stays below 5: 75, 3.709635/s, p(95)=418.19ms, because the sleep(1) line in the code. Because of that wait, each user sends less than 1 request per second. So 5 users send less than 5 requests per second.
 - Step 0.6, exit code of the normal run and of the run with P95=300: 0 and 99
 - Step 0.7, rules that passed, p(95), p(99), exit code after your change: all 3, p(95)=413.26ms, p(99)=418.93ms, 99
-- Step 0.8, what was wrong, and how the checks showed it:
+- Step 0.8, what was wrong, and how the checks showed it: pepperoni and knife needs to be capitalize, the pizza that get picked can be one with no pepperoni and knife already, so many request show the instance when the wrong pizza show up.
 
 ## Part A results | Step | Test type    | Users | Req/s | p(95) | Max | Failed | Checks |
 | ---- | ------------ | ----- | ----- | ----- | --- | ------ | ------ |
