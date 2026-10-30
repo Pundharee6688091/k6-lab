@@ -17,12 +17,18 @@
 | A5   | Soak         | 2     |   0.97104    | 496.91 ms | 1336 ms | 0.00% | 100.00% |  
 
 ## Part B
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
+1. Above
+2. Because the sleep(1) line in the code. Because of that wait, each user sends less than 1 request per second. So 5 users send less than 5 requests per second.
+3. No. The p(95) was 418.47 ms at 3 users and 404.13 ms at 5 users, so it did not grow, although the request rate went up. Both loads are well inside the operational envelope.
+4. The response time was back to normal within 20 to 30 seconds.
+5. No. A soak test of several hours could reveal a memory leak.
+6. The average hides the slowest users. The p(95) shows how slow the slowest requests are.
+7. 1 a public site is reached over the internet, so the network delay changes. 2, QuickPizza is shared with everyone learning K6, and their traffic can affects the numbers.
+8. It can slow down or crash the site for real users, it looks like a denial-of-service attack, and it can be illegal.
+9. Vague: "The food search in my delivery app should be fast."
+   Testable: with 3 users for 30 seconds, 95% of search requests answer within
+   1 second, 99% within 1.5 seconds, and fewer than 1% fail.
+     thresholds: {
+       http_req_failed: ['rate<0.01'],
+       http_req_duration: ['p(95)<1000', 'p(99)<1500'],
+     },
